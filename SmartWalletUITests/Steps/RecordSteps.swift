@@ -26,10 +26,27 @@ extension NewRecordTest {
         app.keys[number].tap()
     }
     
+    func inputValueToTransaction(number: String) {
+        let textField = RecordScreen.txtTypeTransaction.element
+        
+        XCTAssertTrue(textField.exists)
+        textField.typeText(number)
+    }
+    
     func clickButtonSubmit() {
         let button = RecordScreen.btnSubmit.element
         
         XCTAssertTrue(button.exists)
         button.tap()
+    }
+    
+    func selectTypeTransaction(text: String) {
+        let select = RecordScreen.txtTypeTransaction.element
+        
+        XCTAssertTrue(select.exists)
+        select.tap()
+        
+        let picker = XCUIApplication().pickerWheels["Foods & Drinks"]
+        picker.adjust(toPickerWheelValue:  text)
     }
 }

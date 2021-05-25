@@ -17,4 +17,16 @@ class NewRecordTest: SmartWalletUITestBase {
         pressNumberKey(number: "6")
         clickButtonSubmit()
     }
+    
+    func testAddRecordGeneral() {
+        verifyTabCurrent()
+        clickButtonAdd()
+        pressNumberKey(number: "8")
+        pressNumberKey(number: "9")
+        
+        selectTypeTransaction(text: "General")
+
+        clickButtonSubmit()
+        
+    }
 }
